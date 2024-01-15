@@ -12,56 +12,30 @@ function toggleNav() {
 </script>
 
 <template>
-  <div id="nescss" class="main-container">
-    <!-- Side navigation menu and Main content area including header and router view -->
-    <div class="nav-and-content" :style="{ 'padding-top': '5rem' }">
-      <nav class="side-nav" v-show="isNavOpen">
-        <div class="nav-brand">
-          <a href="/">
-            <h1><i class="snes-jp-logo brand-logo"></i>NES.css</h1>
-          </a>
-        </div>
-        <ul class="nav-links">
-          <li><router-link to="/" class="nes-btn">Home</router-link></li>
-          <li><router-link to="/about" class="nes-btn">About</router-link></li>
-          <li><router-link to="/contact" class="nes-btn">Contact</router-link></li>
-        </ul>
-        <!-- Add more navigation links as needed -->
-      </nav>
-
-      <div class="content-area">
-        <!-- Header section -->
-        <header class="header">
-          <div class="nes-field is-inline">
-            <input type="text" id="name_field" class="nes-input" placeholder="Search...">
-          </div>
-          <div class="profile-container">
-            <button class="nes-btn is-primary">Profile</button>
-            <!-- Dropdown menu content -->
-            <div class="dropdown-content">
-              <a href="#" class="nes-btn">My Account</a>
-              <a href="#" class="nes-btn">Settings</a>
-              <a href="#" class="nes-btn">Logout</a>
-            </div>
-          </div>
-        </header>
-        
-        <!-- Main content section where router views are rendered -->
-        <main class="main-content">
-          <router-view></router-view>
-        </main>
-      </div>
+  <div id="app" class="main-container">
+    <nav class="side-nav">
+      <router-link to="/" class="nes-btn">Home</router-link>
+      <router-link to="/about" class="nes-btn">About</router-link>
+      <!-- Add more navigation links as needed -->
+    </nav>
     
-
-            <!-- Footer section -->
+    <div class="content-area">
+      <header class="header">
+        <input type="text" id="name_field" class="nes-input" placeholder="Search...">
+        <!-- Profile and dropdown menu content can be added here if needed -->
+      </header>
+      
+      <main class="main-content">
+        <router-view></router-view>
+      </main>
+    </div>
     
-           </div>
-           <footer>
+    <footer class="footer">
       <p>GoldBudz</p>
     </footer>
-   </div>
-
+  </div>
 </template>
+
 <style>
 /* You can add global styles here */
 body {
