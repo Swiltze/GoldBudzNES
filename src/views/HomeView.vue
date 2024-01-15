@@ -1,76 +1,60 @@
 <template>
-  <div class="home">
-    <div class="video-container">
-      <div class="video-embed-container">
-        <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
+    <div class="grid-container">
+      <!-- Video player column -->
+      <div class="video-container">
+        <!-- Responsive video embed -->
+        <div class="video-embed-container">
+          <iframe
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
-    </div>
 
-    <div class="chat-container">
-      <div class="messages">
-        <!-- Chat messages will be displayed here -->
+      <!-- Chat column -->
+      <div class="chat-container">
+    <!-- Chat messages area -->
+    <div class="messages">
+      <!-- Example of a message balloon from the user -->
+      <div class="message -right">
+        <div class="nes-balloon from-right">
+          <p>Hello!</p>
+        </div>
       </div>
-      <div class="message-input">
-        <input type="text" class="nes-input" placeholder="Type a message..." />
-        <button type="button" class="nes-btn is-primary">Send</button>
+      <!-- Example of a message balloon from another person -->
+      <div class="message -left">
+        <div class="nes-balloon from-left">
+          <p>damn ur plants r looking good</p>
+        </div>
       </div>
+      <div class="message -left">
+        <div class="nes-balloon from-left">
+          <p>L bozo</p>
+        </div>
+      </div>
+      <div class="message -left">
+        <div class="nes-balloon from-left">
+          <p>clown</p>
+        </div>
+      </div>
+      <div class="message -right">
+        <div class="nes-balloon from-right">
+          <p>D:</p>
+        </div>
+      </div>
+      <!-- Add more messages here -->
+    </div>
+    <!-- Chat input area -->
+    <div class="message-input">
+      <input type="text" class="nes-input" placeholder="Type a message..." />
+      <button type="button" class="nes-btn is-primary send-btn">Send</button>
     </div>
   </div>
+    </div>
 </template>
-
-<script setup lang="ts">
-// Script logic for HomeView can be added here
-</script>
-
-<style scoped>
-.home {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem;
-}
-
-.video-container {
-  flex: 3;
-}
-
-.video-embed-container {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-}
-
-.video-embed-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.chat-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.messages {
-  flex: 1;
-  overflow-y: auto;
-}
-
-.message-input {
-  margin-top: 1rem;
-}
-
-/* Additional styles can be added here */
-</style>
-
 
 <script lang="ts">
 export default {
