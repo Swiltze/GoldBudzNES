@@ -15,8 +15,10 @@ function toggleNav() {
   <div id="nescss" class="main-container">
     <!-- Side navigation menu and Main content area including header and router view -->
     <div class="nav-and-content" :style="{ 'padding-top': '5rem' }">
-      <nav class="side-nav" :class="{ 'icons-only': !isNavOpen }">
-        <button class="toggle-nav-btn nes-btn" @click="toggleNav">Toggle</button>
+      <nav class="side-nav" v-if="isNavOpen">
+        <button class="nes-btn toggle-nav-btn" @click="toggleNav">
+            <i class="nes-icon is-small" :class="isNavOpen ? 'nes-icon close' : 'nes-icon menu'"></i>
+          </button>
         <div class="nav-brand">
           <a href="/">
             <h1><i class="snes-jp-logo brand-logo"></i>GoldBudz</h1>
@@ -116,6 +118,11 @@ body {
   flex-direction: column;
   flex: 1;
   overflow-y: auto;
+  transition: margin-left 0.3s;
+}
+
+.content-area[style*="margin-left: 0px"] {
+  margin-left: 0px;
 }
 
 .flex-container {
