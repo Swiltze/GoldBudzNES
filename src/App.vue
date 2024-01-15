@@ -22,7 +22,7 @@ function toggleNav() {
           </a>
         </div>
         <ul class="nav-links">
-          <li><router-link to="/" class="nes-btn">Home</router-link></li>
+          <li><router-link to="/home" class="nes-btn">Home</router-link></li>
           <li><router-link to="/about" class="nes-btn">About</router-link></li>
           <li><router-link to="/contact" class="nes-btn">Contact</router-link></li>
         </ul>
