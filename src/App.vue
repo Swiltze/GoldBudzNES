@@ -15,10 +15,11 @@ function toggleNav() {
   <div id="nescss" class="main-container">
     <!-- Side navigation menu and Main content area including header and router view -->
     <div class="nav-and-content" :style="{ 'padding-top': '5rem' }">
-      <nav class="side-nav" v-show="isNavOpen">
+      <nav class="side-nav" :class="{ 'icons-only': !isNavOpen }">
+        <button class="toggle-nav-btn nes-btn" @click="toggleNav">Toggle</button>
         <div class="nav-brand">
           <a href="/">
-            <h1><i class="snes-jp-logo brand-logo"></i>NES.css</h1>
+            <h1><i class="snes-jp-logo brand-logo"></i>GoldBudz</h1>
           </a>
         </div>
         <ul class="nav-links">
@@ -98,6 +99,17 @@ body {
   overflow-y: auto; 
 }
 
+.side-nav.icons-only {
+  width: 50px; /* Adjust width for icons-only menu */
+}
+
+.side-nav.icons-only .nav-links li a {
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
 /* Content area including header, main content, and footer */
 .content-area {
   display: flex;
@@ -173,11 +185,24 @@ body {
   color: inherit; /* Use the current text color */
   display: block; /* Make links fill the list item */
   padding: 0.5rem 1rem; /* Add padding for clickability */
+  display: flex;
 }
 
 /* Change link styles on hover */
 .nav-links li a:hover {
   background-color: #f0f0f0; /* Light background on hover */
+}
+
+/* Add styles for icons-only state */
+.icons-only .nav-brand,
+.icons-only .nav-links li a {
+  display: none; /* Hide text when icons-only */
+}
+
+/* Show only icons in the icons-only state */
+.icons-only .nav-brand .brand-logo,
+.icons-only .nav-links li a i {
+  display: block;
 }
 
 /* Style for the active route */
