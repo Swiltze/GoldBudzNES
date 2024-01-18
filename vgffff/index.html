@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Retro Pixel Theme Login Page</title>
+<link rel="stylesheet" href="assets/theme/retro-theme.css">
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+<link href="https://unpkg.com/nes.css/css/nes.css" rel="stylesheet" />
+<style>
+  /* Additional CSS will be placed here */
+</style>
+</head>
+<body>
+
+  <div id="top-bar">
+    <div class="search-container">
+      <input type="text" placeholder="Search...">
+      <button class="nes-btn">Go</button>
+    </div>
+  </div>
+
+<div id="wrapper">
+  <nav id="sidebar">
+    <button class="nes-btn" id="toggle-btn">Toggle</button>
+    <ul class="nes-list is-disc">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Inside index.html -->
+<div id="main-content">
+  <!-- Video player container -->
+  <div id="video-player">
+    <!-- Your video player code goes here -->
+    <video controls width="100%">
+      <source src="path-to-your-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
+
+<!-- Chat bar container -->
+<div id="chat-bar">
+  <!-- Chat content goes here -->
+  <div class="chat-messages">
+    <!-- Chat messages will be displayed here -->
+  </div>
+  <div class="chat-input">
+    <input type="text" placeholder="Type a message...">
+    <button class="nes-btn">Send</button>
+  </div>
+</div>
+
+<footer id="footer">
+  <p>kiss mi pis</p>
+</footer>
+
+<script>
+  // JavaScript for toggling the sidebar
+  document.getElementById('toggle-btn').addEventListener('click', function() {
+    document.getElementById('sidebar').classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

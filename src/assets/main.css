@@ -1,32 +1,96 @@
-/* Additional CSS */
-body, html {
-  padding-top: 35px;
-    height: 100%;
-    margin: 0;
-    font-family: 'Press Start 2P', cursive;
+:root {
+  --video-width: 16;
+  --video-height: 9;
   }
-  
-  #wrapper {
-    display: flex;
-    flex-wrap: nowrap;
-    height: calc(100% - 50px); /* Adjust height based on footer height */
+  *{box-sizing:border-box;margin:0;padding:0;}article,aside,blockquote,div,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,legend,main,nav,pre,q,section{display:block;}body,html{font-size:16px;line-height:1;}button,input,select,textarea{display:inline;font-size:1em;zoom:1;}a,abbr,br,code,i,kbd,label,span,sub,sup{display:inline;}abbr{text-decoration:none;}abbr,fieldset,img{border:none;}caption,code,i,kbd,th{font-style:normal;font-weight:normal;text-decoration:none;}caption{display:table-caption;}code{font-size:1em;}col{display:table-column;}colgroup{display:table-column-group;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:700;}input,select{vertical-align:middle;}li{display:list-item;}ol,ul{list-style:none;}sub{vertical-align:sub;}sup{vertical-align:super;}table{display:table;border-collapse:collapse;border-spacing:0;}tbody{display:table-row-group;}td,th{display:table-cell;}tfoot{display:table-footer-group;}thead{display:table-header-group;}tr{display:table-row;}
+
+  body,
+  html {
+      height: 100%;
+      width: 100%;
   }
-  
+  #chat-bar {
+      background: #515151;
+  }
+  #footer {
+      align-items: center;
+      background: #333;
+      bottom: 0;
+      color: #fff;
+      display: grid;
+      height: 50px;
+      justify-content: center;
+      line-height: 50px;
+      position: fixed;
+      width: 100%;
+  }
+  #main-content {
+      background: #ddd;
+      padding: 40px;
+  }
   #sidebar {
-    min-width: 250px;
-    max-width: 250px;
-    background: #333;
-    color: #fff;
-    transition: all 0.3s;
-    overflow: hidden;
-    
+      background: #515151;
+  }
+  #top-bar {
+      align-items: center;
+      background: #333;
+      color: #fff;
+      display: grid;
+      height: 70px;
+      justify-content: center;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+  }
+  #wrapper {
+      display: grid;
+      grid-template-columns: 250px auto 250px; /* This creates three columns of equal width */
+      /*grid-gap: 10px;*/ /* Adjust the gap between the columns as needed */
+      height: calc(100% - 120px); /* Adjust height based on header and footer height */
+      position: relative;
+      top: 70px;
+      transition: all 0.25s linear;
+  }
+  #wrapper.active {
+      grid-template-columns: 50px auto 250px; /* change the first 250px to be smaller */
+  }
+
+  .video {
+      /*height: calc((var(--video-height) / var(--video-width)) * 100%);*/
+      height: 768px;
+      max-height: 768px;
+      /*padding-bottom: calc((var(--video-height) / var(--video-width)) * 100%);*/
+      width: 100%;
+  }
+
+  .chat-messages {
+    padding: 10px;
+    height: calc(100% - 60px); /* Adjust height based on input area */
+    overflow-y: auto; /* Enable scroll for overflow content */
   }
   
-  #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+  .chat-input {
+    position: fixed;
+    bottom: 50px; /* Position above the footer */
+    width: 250px; /* Match the width of the chat bar */
+    background: #2c2f33; /* Match the background of the chat bar */
+    padding: 5px;
+    box-sizing: border-box;
   }
   
+  .chat-input input {
+    width: 95%;
+    padding: 5px;
+    box-sizing: border-box;
+  }
+  
+  .chat-input button {
+    width: 80px;
+    box-sizing: border-box;
+  }
+
   #sidebar ul {
     list-style: none;
     padding: 0;
@@ -43,168 +107,5 @@ body, html {
   #sidebar ul li a:hover {
     background: #555;
   }
+
   
-  #main-content {
-    flex-grow: 1;
-    background: #f4f4f4;
-    padding: 35px;
-    overflow: auto;
-  }
-  
-  #footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    line-height: 50px; /* Adjust line-height to match height for vertical centering */
-    height: 50px; /* Footer height */
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-  }
-  
-  /* Adjustments for toggle button */
-  #toggle-btn {
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-/* Style for video player */
-#video-player {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-/* Style for chat bar */
-#chat-bar {
-  width: 250px; /* Width of the chat bar */
-  background: #2c2f33; /* Chat bar background color */
-  color: #fff;
-  overflow-y: auto; /* Enable scroll for overflow content */
-  border-left: 1px solid #23272a; /* Border between chat bar and main content */
-}
-
-.chat-messages {
-  padding: 10px;
-  height: calc(100% - 60px); /* Adjust height based on input area */
-  overflow-y: auto; /* Enable scroll for overflow content */
-}
-
-.chat-input {
-  position: fixed;
-  bottom: 50px; /* Position above the footer */
-  width: 250px; /* Match the width of the chat bar */
-  background: #2c2f33; /* Match the background of the chat bar */
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-.chat-input input {
-  width: 95%;
-  padding: 5px;
-  box-sizing: border-box;
-}
-
-.chat-input button {
-  width: 80px;
-  box-sizing: border-box;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.nes-container {
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 20px;
-}
-
-.title {
-  text-align: center;
-}
-
-#top-bar {
-  background: #333; /* Adjust the color to fit your theme */
-  color: #fff;
-  padding: 10px 20px; /* Adjust padding as needed */
-  position: fixed; /* Fixed at the top */
-  top: 0; /* Align to the top */  
-  left: 0; /* Align to the left */
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 1000; /* Ensure it's above other content */
-}
-
-.search-container {
-  max-width: 300px; /* Adjust the width of the search bar */
-  margin: 0 auto;
-  display: flex;
-}
-
-.search-container input {
-  flex-grow: 1;
-  padding: 5px;
-  margin-right: 5px; /* Space between input and button */
-}
-
-.search-container button {
-  padding: 5px 10px;
-}
-
-@media (min-width: 768px) {
-  #wrapper {
-    flex-direction: row;
-  }
-
-  #chat-bar {
-    /* If the chat bar is still on the left, you might need to add 'order' property */
-    order: 2; /* This will ensure the chat bar is positioned after the main content */
-  }
-}
-
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    #sidebar {
-      min-width: 80px;
-      max-width: 80px;
-    }
-  
-    #sidebar.active {
-      min-width: 250px;
-      max-width: 250px;
-    }
-  
-    #toggle-btn {
-      display: block;
-    }
-  
-    #wrapper {
-    flex-direction: column;
-  }
-
-  #chat-bar {
-    order: 3; /* Position the chat bar below the main content on smaller screens */
-    width: 100%; /* Full width on smaller screens */
-  }
-
-  }
-  
-  .index {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    padding: 2rem;
-  }
-  
-  .nes-container {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 20px;
-  }

@@ -1,0 +1,161 @@
+*{box-sizing:border-box;margin:0;padding:0;}article,aside,blockquote,div,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hr,legend,main,nav,pre,q,section{display:block;}body,html{font-size:16px;line-height:1;}button,input,select,textarea{display:inline;font-size:1em;zoom:1;}a,abbr,br,code,i,kbd,label,span,sub,sup{display:inline;}abbr{text-decoration:none;}abbr,fieldset,img{border:none;}caption,code,i,kbd,th{font-style:normal;font-weight:normal;text-decoration:none;}caption{display:table-caption;}code{font-size:1em;}col{display:table-column;}colgroup{display:table-column-group;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:700;}input,select{vertical-align:middle;}li{display:list-item;}ol,ul{list-style:none;}sub{vertical-align:sub;}sup{vertical-align:super;}table{display:table;border-collapse:collapse;border-spacing:0;}tbody{display:table-row-group;}td,th{display:table-cell;}tfoot{display:table-footer-group;}thead{display:table-header-group;}tr{display:table-row;}
+
+
+
+/* Additional CSS */
+body, html {
+  padding-top: 35px;
+    height: 100%;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+  }
+  
+    #wrapper {
+      display: grid;
+      grid-template-columns: 250px 1fr 250px; /* This creates three columns of equal width */
+      height: calc(100% - 50px); /* Adjust height based on footer height */
+    }
+
+    #wrapper.active {
+      grid-template-columns: 50px 1fr 250px; /* change the first 250px to be smaller */
+  }
+  
+  #sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: #333;
+    color: #fff;
+    transition: all 0.3s;
+    overflow: hidden;
+  }
+  
+  #sidebar.active {
+    min-width: 80px;
+    max-width: 80px;
+  }
+  
+  #sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+  }
+  
+  #sidebar ul li a:hover {
+    background: #555;
+  }
+  
+  #main-content {
+    background: #f4f4f4;
+    padding: 20px;
+    overflow: auto;
+  }
+  
+  #footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 50px; /* Adjust line-height to match height for vertical centering */
+    height: 50px; /* Footer height */
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Adjustments for toggle button */
+  #toggle-btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+/* Style for video player */
+#video-player {
+  padding: 20px;
+}
+
+/* Style for chat bar */
+#chat-bar {
+  width: 250px; /* Width of the chat bar */
+  background: #2c2f33; /* Chat bar background color */
+  color: #fff;
+  overflow-y: auto; /* Enable scroll for overflow content */
+  border-left: 1px solid #23272a; /* Border between chat bar and main content */
+}
+
+.chat-messages {
+  padding: 10px;
+  height: calc(100% - 60px); /* Adjust height based on input area */
+  overflow-y: auto; /* Enable scroll for overflow content */
+}
+
+.chat-input {
+  position: fixed;
+  bottom: 50px; /* Position above the footer */
+  width: 250px; /* Match the width of the chat bar */
+  background: #2c2f33; /* Match the background of the chat bar */
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.chat-input input {
+  width: 95%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.chat-input button {
+  width: 80px;
+  box-sizing: border-box;
+}
+
+#top-bar {
+  background: #333; /* Adjust the color to fit your theme */
+  color: #fff;
+  padding: 10px 20px; /* Adjust padding as needed */
+  position: fixed; /* Fixed at the top */
+  top: 0; /* Align to the top */  
+  left: 0; /* Align to the left */
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+.search-container {
+  max-width: 300px; /* Adjust the width of the search bar */
+  margin: 0 auto;
+  display: flex;
+}
+
+.search-container input {
+  padding: 5px;
+  margin-right: 5px; /* Space between input and button */
+}
+
+.search-container button {
+  padding: 5px 10px;
+}
+
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    #sidebar {
+      min-width: 80px;
+      max-width: 80px;
+    }
+  
+    #sidebar.active {
+      min-width: 250px;
+      max-width: 250px;
+    }
+  
+    #toggle-btn {
+      display: block;
+    }
+  }
+  

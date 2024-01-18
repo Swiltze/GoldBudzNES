@@ -9,49 +9,48 @@ function toggleNav() {
 }
 
 
+
+
 </script>
 
 <template>
     <div id="top-bar">
-    <div class="search-container">
-      <input type="text" placeholder="Search...">
-      <button class="nes-btn">Go</button>
+        <div class="search-container">
+            <input id="input-search" name="input-search" placeholder="Search..." type="text">
+            <button class="nes-btn" type="submit">Go</button>
+        </div>
     </div>
-  </div>
 
-<div id="wrapper">
-  <nav id="sidebar" :class="{ active: isNavOpen }">
-    <button class="nes-btn" id="toggle-btn" @click="toggleNav">Toggle</button>
-    <ul class="nes-list is-disc">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Services</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
-        <!-- Main content section where router views are rendered -->
+    <div id="wrapper" :class="{ active: isNavOpen }">
+        <nav id="sidebar">
+            <button @click="toggleNav()" type="button">Collapse</button>
+            <ul class="nes-list is-disc">
+                <li><router-link to="/">Login</router-link></li>
+                <li><router-link to="/home">Home</router-link></li>
+                <li><router-link to="#">placeholder</router-link></li>
+                <li><router-link to="#">placeholder</router-link></li>
+              </ul>
+        </nav>
         <div id="main-content">
-  <!-- Video player container -->
-  <router-view></router-view>
-  </div>
-  <!-- Chat bar container -->
-<div id="chat-bar">
-  <!-- Chat content goes here -->
-  <div class="chat-messages">
-    <!-- Chat messages will be displayed here -->
-  </div>
-  <div class="chat-input">
-    <input type="text" placeholder="Type a message...">
-    <button class="nes-btn">Send</button>
-  </div>
-</div>
-</div>
+            <router-view></router-view>
+        </div>
+        <div id="chat-bar">
+            <div class="chat-messages">
+            </div>
+            <div class="chat-input">
+            <input type="text" placeholder="Type a message...">
+            <button class="nes-btn">Send</button>
+            </div>
+        </div>
+    </div>
 
-
-       
+    <div id="footer">
+        <p>kiss mi pis</p>
+    </div>
+    
        
   <footer id="footer">
-  <p>GB</p>
+  <p>kiss mi pis</p>
 </footer>
 
 </template>

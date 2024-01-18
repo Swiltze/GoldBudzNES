@@ -1,6 +1,6 @@
 <template>
   
-    <div id="video-player">
+    <div class="video">
     <!-- Your video player code goes here -->
     <video controls width="100%">
       <source src="https://www.youtube.com/embed/dQw4w9WgXcQ" type="video/mp4">
