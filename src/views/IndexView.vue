@@ -27,7 +27,7 @@
           <label for="new_password_field">Password</label>
           <input type="password" id="new_password_field" class="nes-input" placeholder="Password">
         </div>
-        <button type="button" class="nes-btn is-success">Register</button>
+        <XButton success>Login</XButton>
       </section>
     </div>
   </template>

@@ -1,12 +1,15 @@
 import './assets/main.css'
-import 'nes.css/css/nes.min.css';
+import './assets/nes.css'
 
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
+import { XButton } from '@collabcod3/pxui';
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(router)
+app.component('XButton', XButton);
 
-app.mount('#app')
+app.use(router);
+
+app.mount('#app');
